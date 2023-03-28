@@ -28,9 +28,10 @@ public class ArticleServiceImpl implements ArticleService {
   }
 
   @Override
-  public List<Article> findAll() {
-	  return this.articleDAO.findAll();
-  }
+  public List<Article> searchArticle(final String searchText) { return this.articleDAO.searchArticle(searchText); }
+
+  @Override
+  public List<Article> findAll() { return this.articleDAO.findAll(); }
 
   @Override
   public void createArticle(final Article article) {

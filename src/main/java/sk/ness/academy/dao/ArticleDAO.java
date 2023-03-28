@@ -11,6 +11,8 @@ public interface ArticleDAO {
 
 	  void deleteByID(Integer articleId);
 
+	  List<Article> searchArticle(String searchText);
+
 	  /** Returns all available {@link Article}s */
 	  List<Article> findAll();
 

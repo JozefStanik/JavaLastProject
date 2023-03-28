@@ -12,6 +12,8 @@ public interface ArticleService {
 	  /** Deletes {@link Article} with provided ID */
 	  void deleteByID(Integer articleId);
 
+	  List<Article> searchArticle(String searchText);
+
 	  /** Returns all available {@link Article}s */
 	  List<Article> findAll();
 
