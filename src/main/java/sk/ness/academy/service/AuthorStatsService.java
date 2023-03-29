@@ -1,0 +1,10 @@
+package sk.ness.academy.service;
+
+import sk.ness.academy.dto.AuthorStats;
+
+import java.util.List;
+
+public interface AuthorStatsService {
+
+    List<AuthorStats> articlesCount();
+}

@@ -15,6 +15,7 @@ import sk.ness.academy.dto.Author;
 import sk.ness.academy.dto.AuthorStats;
 import sk.ness.academy.service.ArticleService;
 import sk.ness.academy.service.AuthorService;
+import sk.ness.academy.service.AuthorStatsService;
 
 @RestController
 public class BlogController {
@@ -24,6 +25,9 @@ public class BlogController {
 
   @Resource
   private AuthorService authorService;
+
+  @Resource
+  private AuthorStatsService authorStatsService;
 
   // ~~ Article
   @RequestMapping(value = "articles", method = RequestMethod.GET)
@@ -59,7 +63,7 @@ public class BlogController {
 
   @RequestMapping(value = "authors/stats", method = RequestMethod.GET)
   public List<AuthorStats> authorStats() {
-	  throw new UnsupportedOperationException("Author statistics not implemented.");
+    return this.authorStatsService.articlesCount();
   }
 
 }

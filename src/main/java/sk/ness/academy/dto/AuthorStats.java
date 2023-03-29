@@ -1,9 +1,11 @@
 package sk.ness.academy.dto;
 
+import java.math.BigInteger;
+
 public class AuthorStats {
 
 	  private String authorName;
-	  private Integer articleCount;
+	  private BigInteger articleCount;
 
 	  public String getAuthorName() {
 	    return this.authorName;
@@ -13,11 +15,11 @@ public class AuthorStats {
 	    this.authorName = authorName;
 	  }
 
-	  public Integer getArticleCount() {
+	  public BigInteger getArticleCount() {
 	    return this.articleCount;
 	  }
 
-	  public void setArticleCount(final Integer articleCount) {
+	  public void setArticleCount(final BigInteger articleCount) {
 	    this.articleCount = articleCount;
 	  }
 

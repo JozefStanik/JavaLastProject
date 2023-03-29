@@ -25,7 +25,7 @@ public class ArticleHibernateDAO implements ArticleDAO {
     Article toDelete = this.sessionFactory.getCurrentSession().load(Article.class, articleId);
     this.sessionFactory.getCurrentSession().delete(toDelete);
   }
-// or text like :searchText or title like searchText
+
   @Override
   public  List<Article> searchArticle(final String searchText){
     return this.sessionFactory.getCurrentSession()
