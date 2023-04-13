@@ -33,7 +33,7 @@ public class TestDatabaseConfig {
 
     @Bean(name = "dataSource")
     public DataSource dataSource() {
-        return new SimpleDriverDataSource(new JDBCDriver(), "jdbc:hsqldb:file:initdb;shutdown=true", "sa", "");
+        return new SimpleDriverDataSource(new JDBCDriver(), "jdbc:hsqldb:file:testdb;shutdown=true", "sa", "");//initdb
     }
 
     @Bean(name = "transactionManager")

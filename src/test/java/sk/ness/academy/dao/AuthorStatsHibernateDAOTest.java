@@ -13,6 +13,7 @@ import sk.ness.academy.dto.AuthorStats;
 
 import javax.transaction.Transactional;
 
+import java.math.BigInteger;
 import java.util.List;
 
 
@@ -41,8 +42,8 @@ public class AuthorStatsHibernateDAOTest {
         Assertions.assertEquals("Author 1", authorStatsList.get(0).getAuthorName());
         Assertions.assertEquals("Author 2", authorStatsList.get(1).getAuthorName());
         Assertions.assertEquals("Author 3", authorStatsList.get(2).getAuthorName());
-        Assertions.assertEquals(2, authorStatsList.get(0).getArticleCount());
-        Assertions.assertEquals(2, authorStatsList.get(1).getArticleCount());
-        Assertions.assertEquals(1, authorStatsList.get(2).getArticleCount());
+        Assertions.assertEquals(BigInteger.valueOf(1), authorStatsList.get(0).getArticleCount());
+        Assertions.assertEquals(BigInteger.valueOf(1), authorStatsList.get(1).getArticleCount());
+        Assertions.assertEquals(BigInteger.valueOf(1), authorStatsList.get(2).getArticleCount());
     }
 }

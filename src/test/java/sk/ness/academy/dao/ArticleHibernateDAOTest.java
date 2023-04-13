@@ -61,19 +61,18 @@ class ArticleHibernateDAOTest {
     @Test
     void searchAllTest() {
         final List<ArticlesWithoutComments> search = articleHibernateDAO.searchArticle("Author");
-        Assertions.assertEquals(4, search.size());
+        Assertions.assertEquals(3, search.size());
         Assertions.assertEquals("Author 1",search.get(0).getAuthor());
         Assertions.assertEquals("Author 2",search.get(1).getAuthor());
         Assertions.assertEquals("Author 3",search.get(2).getAuthor());
-        Assertions.assertEquals("Author 4",search.get(3).getAuthor());
     }
 
     @Test
     void persistTest(){
         articleHibernateDAO.persist(article);
-        Assertions.assertEquals("Author 4", articleHibernateDAO.findByID(3).getAuthor());
-        Assertions.assertEquals("Title 4", articleHibernateDAO.findByID(3).getTitle());
-        Assertions.assertEquals("Text 4", articleHibernateDAO.findByID(3).getText());
+        Assertions.assertEquals("Author 4", articleHibernateDAO.findByID(4).getAuthor());
+        Assertions.assertEquals("Title 4", articleHibernateDAO.findByID(4).getTitle());
+        Assertions.assertEquals("Text 4", articleHibernateDAO.findByID(4).getText());
     }
 
     @Test

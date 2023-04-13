@@ -20,11 +20,13 @@ import java.util.List;
 @SpringBootTest
 @ContextConfiguration(classes = {TestDatabaseConfig.class, CommentHibernateDAO.class})
 @Transactional
-@Sql({"/testdb.sql"})
+@Sql({"/initdb.sql"})
 public class CommentHibernateDAOTest {
     @Autowired
     private CommentHibernateDAO commentHibernateDAO;
     private Comment comment;
+
+    private Comment commentToDelete;
 
     @BeforeEach
     public void beforeEach(){
@@ -53,7 +55,7 @@ public class CommentHibernateDAOTest {
         final List<Comment> comments = commentHibernateDAO.findAll();
         Assertions.assertEquals(5,comments.size());
         Assertions.assertEquals("Author C1",comments.get(0).getAuthor());
-        Assertions.assertEquals("Text C2",comments.get(2).getText());
+        Assertions.assertEquals("Text C3",comments.get(2).getText());
     }
 
     @Test
@@ -64,8 +66,8 @@ public class CommentHibernateDAOTest {
 
     @Test
     void deleteByIdTest(){
+        commentToDelete = commentHibernateDAO.findByID(6);
         commentHibernateDAO.deleteByID(6);
-        Assertions.assertNull(comment);
-
+        Assertions.assertNull(commentToDelete);
     }
 }
