@@ -15,6 +15,7 @@ public class AuthorStatsHibernateDAO implements AuthorStatsDAO{
     @Resource(name = "sessionFactory")
     private SessionFactory sessionFactory;
 
+    @SuppressWarnings("unchecked")
     @Override
     public List<AuthorStats> articlesCount() {
         List<Object[]> results = this.sessionFactory.getCurrentSession().createSQLQuery("select a.author, count(*) from articles a group by a.author").list();

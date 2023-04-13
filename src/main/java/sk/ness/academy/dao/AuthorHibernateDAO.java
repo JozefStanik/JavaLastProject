@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import sk.ness.academy.dto.Author;
 import sk.ness.academy.dto.AuthorStats;
+import sk.ness.academy.dto.ArticlesWithoutComments;
 
 @Repository
 public class AuthorHibernateDAO implements AuthorDAO {

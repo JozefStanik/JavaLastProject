@@ -3,6 +3,7 @@ package sk.ness.academy.service;
 import java.util.List;
 
 import sk.ness.academy.domain.Article;
+import sk.ness.academy.dto.ArticlesWithoutComments;
 
 public interface ArticleService {
 
@@ -12,10 +13,10 @@ public interface ArticleService {
 	  /** Deletes {@link Article} with provided ID */
 	  void deleteByID(Integer articleId);
 
-	  List<Article> searchArticle(String searchText);
+	  List<ArticlesWithoutComments> searchArticle(String searchText);
 
 	  /** Returns all available {@link Article}s */
-	  List<Article> findAll();
+	  List<ArticlesWithoutComments> findAll();
 
 	  /** Creates new {@link Article} */
 	  void createArticle(Article article);
